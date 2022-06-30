@@ -8,15 +8,13 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-    <title>Paso4_Grupo5</title>
-    <link rel="stylesheet" href="estilos/estilos.css">
+    <title>Paso5_Grupo5</title>
   </head>
   <body>
-      
     <header>
       <img src="img/Head.JPG" class="img-fluid" alt="...">
     </header>
-    
+
     <!-- Barra de navegacion -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
@@ -34,8 +32,8 @@
                 Utilidades
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="calcular_producto.html">Calcular Producto</a></li>
-                <li><a class="dropdown-item" href="conversor_byte.html">Conversor byte</a></li>
+                <li><a class="dropdown-item" href="calcular_producto.html">Almacen Registrados</a></li>
+                <li><a class="dropdown-item" href="conversor_byte.html">Almacen Usuarios</a></li>
               </ul>
             </li>
             <li class="nav-item dropdown">
@@ -48,7 +46,9 @@
                 <li><a class="dropdown-item" href="eliminar.html">Eliminar Productos</a></li>
                 <li><a class="dropdown-item" href="consultar.html">Consultar Productos</a></li>
               </ul>
-            </li>
+            </li> 
+
+               <!-- menu para el direcionamiento a PHP -->
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Administrador
@@ -60,11 +60,12 @@
                 <li><a class="dropdown-item" href="consultarp.html">Consultar Personas</a></li>
                 <li><a class="dropdown-item" href="consultar.html">Depurar clientes</a></li>
                 <li><a class="dropdown-item" href="php/crearBD.php">Crear Base De Datos</a></li>
-                <li> <a class="dropdown-item" href="php/crearTABLA.php">Crear Una Tabla</a></li>
+                <li> <a class="dropdown-item" href="php/crearTABLA.php">Crear una Tabla</a></li>
                 <li><a class="dropdown-item" href="php/crearPDF.php">Generar Reporte PDF</a></li>
                 <li> <a class="dropdown-item" href="php/crearBACKUP.php">Realizar Backup</a></li>
               </ul>
             </li >
+            
           </ul>
           <form class="d-flex">
             <input class="form-control me-2" type="search" placeholder="Escriba aqui..." aria-label="Search">
@@ -84,79 +85,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     -->
-
-    <h4>
-      <strong>Calcule aqui el producto...</strong>
-    </h4>
-    <!-- Codigo calculadora -->
-
-    <script>
-              
-      // Calculo del % utilidad e IVA
-    function porcentaje(){
-        
-        var a = document.f1.a.value;
-        var b = document.f1.b.value;
-        var c = document.f1.c.value;
-        var r = document.f1.d.value;
-       r=parseFloat(a)*(parseFloat(b)/100);
-       document.f1.d.value=r;
-       r=parseFloat(a)*(parseFloat(c)/100);
-       document.f1.e.value=r;
     
-        // Calculo de la venta
-       var a = document.f1.a.value;
-       var d = document.f1.d.value;
-       var e = document.f1.e.value;
-       var r = document.f1.f.value;
-       r=parseFloat(a)+parseFloat(d)+parseFloat(e);
-       document.f1.f.value=r;
-         
-    }
-    
-    </script> 
-
-<table style="width: 600px; margin: 0% auto;">
-  <thead>
-    <tr>
-      <td>
-        <div  class="container">
-          <h3 style="color: blue;"><marquee>Control Sobre La Venta</marquee></h3>
-              
-              
-              
-              <form name="f1" action="calculadora.html" method="POST">
-                  <div class="form-group">
-                    
-                  <label for="$ compra"><strong style="color: dodgerblue;">Valor de compra</strong>:</label>
-                  <input type="text" class="form-control" id="a" placeholder="Digite el valor" name="a" style="width: 300px;">
-                
-                  <label for="% utilidad"><strong style="color: dodgerblue;">% de utilidad</strong>:</label>
-                  <input type="text" class="form-control" id="b" placeholder="Digite el valor" name="b" style="width: 300px;">
-                  
-                  <label for="% IVA"><strong style="color: dodgerblue;">% Obligacion IVA</strong>:</label>
-                  <input type="text" class="form-control" id="c" placeholder="Digite el valor" name="c" style="width: 300px;">
-                  <br>
-              
-                <input type="Button" name="" value="CALCULAR" onclick="porcentaje()" class="btn btn-success">
-                <input type="Button" name="" value="Limpiar" onclick="reset()" class="btn btn-success">
-                <br><br>
-                <label for="resultado"><strong style="color: blue;">Ganancia:</strong></label>
-                <input type="text" class="form-control" id="d" name="d" placeholder="Total" style="width: 300px;">
-                <label for="resultado"><strong style="color: blue;">iVA por pagar:</strong></label>
-                <input type="text" class="form-control" id="e" name="e" placeholder="Total" style="width: 300px;">
-                <label for="resultado"><strong style="color: blue;">Valor Venta:</strong></label>
-                <input type="text" class="form-control" id="f" name="f" placeholder="Total" style="width: 300px;">
-          
-                </div>
-              
-                </form>
-        </div>
-        
-      </td>
-    </tr>
-  </thead>
-</table>
-
   </body>
 </html>
