@@ -7,6 +7,7 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="estilos/estilos.css">
 
     <title>Paso5_Grupo5</title>
     <link rel="stylesheet" href="estilos/estilos.css">
@@ -94,48 +95,67 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     -->
 
-    <div id="template-bg-1">
-      <div
-      class="d-flex flex-column min-vh-100 justify-content-center align-items-center">
-      <div class="card p-4 text-light bg-dark mb-5">
-      <div class="card-header">
-      <h3>Iniciar sesión </h3>
-      </div>
-      <div class="card-body w-100">
-      <form name="login" action="" method="post">
-      <div class="input-group form-group mt-3">
-      <div class="bg-secondary rounded-start">
-      <span class="m-3"><i class="fas fa-user mt-2"></i></span>
-      </div>
-      <input type="text" class="form-control" placeholder="Usuario"
-      name="username">
-      </div>
-      <div class="input-group form-group mt-3">
-      <div class="bg-secondary rounded-start">
-      <span class="m-3"><i class="fas fa-key mt-2"></i></span>
-      </div>
-      <input type="password" class="form-control" placeholder="Contraseña"
-      name="password">
-      </div>
-      
-      <div class="form-group mt-3">
-      <input type="submit" value="Acceder"
-      class="btn bg-secondary float-end text-white w-100"
-      name="login-btn" > 
-      </div>
-      </form>
-      <?php if(!empty($loginResult)){?>
-      <div class="text-danger"><?php echo $loginResult;?></div>
-      <?php }?>
-      </div>
-      <div class="card-footer">
-      <div class="d-flex justify-content-center">
-      <div class="text-primary">Si ha olvidado su contraseña, recuperela aquí.</div>
-      </div>
-      </div>
-      </div>
-      </div>
-      </div>
+    <script>
+      function checkPassword(valor){
+  var myregex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/; 
+ if(myregex.test(valor)){
+     window.location.href = "conversor_byte.html";
+     return true; 
+            
+ }else{
+    alert(valor+" NO es valido!");
+     return false;        
+ }   
+}
+
+function checkForm(form){
+  if(form.username.value == "") {
+    alert("Error: Debe escribir Usuario!");
+    form.username.focus();
+    return false;
+  }
+  re = /^\w+$/;
+  if(!re.test(form.username.value)) {
+    alert("Error: Nombre de usuario debe contener únicamente letras, numeros y underscores!");
+    form.username.focus();
+    return false;
+  }
+  if(form.pwd1.value != "" && form.pwd1.value == form.pwd2.value) {
+    if(!checkPassword(form.pwd1.value)) {
+      alert("La contraseña no es valida!");
+      form.pwd1.focus();
+      return false;
+    }
+  } else {
+    alert("Error: las contraseñas no coinciden!");
+    form.pwd1.focus();
+    return false;
+  }
+  return true;
+}
+  </script>
+<table style="width: 600px; margin: 0% auto;">
+  <thead>
+    <tr>
+      <td>
+        <div class="container">
+
+          <h3 style="color: blue;"><marquee>  Bienvenido a @Grocol</marquee></h3>
+          <h2>Ingreso a La Aplicacion</h2>
+          <form method="POST" action="/.../" onsubmit="checkForm(this); return false;">
+              <p>Usuario: <input type="text" name="username"></p>
+              <p>Contraseña: <input type="password" name="pwd1"></p>
+              <p>Confirmar Contraseña: <input type="password" name="pwd2"></p>
+              <p><input type="submit" value="verificar"></p>
+              <br>
+              <p style="color: blue">Nuevo usuario o ha olvidado su contraseña, recuperela aquí</p>
+        </div>
+      </td>
+    </tr>
+  </thead>
+</table>
+
+</form>
 
   </body>
 </html>
