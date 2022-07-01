@@ -59,7 +59,7 @@
                 <li><a class="dropdown-item" href="consultarp.html">Consultar Personas</a></li>
                 <li><a class="dropdown-item" href="Depurar.html">Depurar clientes</a></li>
                 <li><a class="dropdown-item" href="php/crearBD.php">Crear Base De Datos</a></li>
-                <li> <a class="dropdown-item" href="php/crearTABLA.php">Crear una Tabla</a></li>
+                <li> <a class="dropdown-item" href="php/crearTABLA.php">Crear Una Tabla</a></li>
                 <li><a class="dropdown-item" href="infopdf.html">Generar Reporte PDF</a></li>
                 <li> <a class="dropdown-item" href="backup.html">Realizar Backup</a></li>
               </ul>
@@ -94,30 +94,19 @@
     -->
 
     <div class="container">
-      <h2>Formulario Ingreso Del Producto</h2>
-      <p><U>Ingrese los valores requeridos</U>:</p>
-      <form action="php/ingresar.php" method="post">
+      <h2>Formulario Depuracion Clientes Inactivos</h2>
+      <p><U>Ingrese El Rango a Buscar</U>:</p>
+      <form action="php/consultar_producto.php" method="post">
         <div class="form-group">
-          <label for="usr"><B>Codigo Producto:</B></label>
-          <input type="number" class="form-control" id="usr" name="codigo" style="width:300px">
+          <label for="usr"><B>Fecha Inicial _ dd/mm/aa:</B></label>
+          <input type="number" class="form-control" id="codigo" name="codigo" style="width:300px">
+          <label for="usr"><B>Fecha Final _ dd/mm/aa:</B></label>
+          <input type="number" class="form-control" id="codigo" name="codigo" style="width:300px">
         </div>
-        <div class="form-group">
-          <label for="pwd"><B>Nombre</B> </label>
-          <input type="text" class="form-control" id="pwd" name="nombre" style="width:600px">
-        </div>
-        <div class="form-group">
-          <label for="pwd"><B>Marca:</B></label>
-          <input type="text" class="form-control" id="pwd" name="marca" style="width:600px">
-        </div>
-        <div class="form-group">
-          <label for="pwd"><B>Precio</B></label>
-          <input type="number" class="form-control" id="pwd" name="precio" style="width:600px">
-        </div>
-        <div class="form-group">
-          <label for="pwd"><B>Cantidad:</B></label>
-          <input type="number" class="form-control" id="pwd" name="cantidad"  style="width:600px">
-        </div>
-        <button type="submit" class="btn btn-primary"><B>Registrar Producto</B></button>
+        <button type="submit" class="btn btn-primary"><B>Filtrar Busqueda</B></button>
+        <BR></BR>
+        <HR></HR>
+        
       </form>
     </div>
   </body>
